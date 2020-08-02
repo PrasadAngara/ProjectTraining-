@@ -33,9 +33,9 @@ namespace APIDemo.Controllers
             repository.Add(employee);
             return Ok();
         }
-        [HttpPatch]
-        [Route("Update")]
-        public IActionResult Update(Employee employee)
+        [HttpPut]
+        [Route("Updateandadd")]
+        public IActionResults Update(Employee employee)
         {
             repository.Update(employee);
             return Ok();
