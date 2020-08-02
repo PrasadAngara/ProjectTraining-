@@ -7,9 +7,9 @@ using APIDemo.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace APIDemo.Controllers
+namespace APIDemo.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/[controllers]")]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
@@ -21,27 +21,29 @@ namespace APIDemo.Controllers
             return Ok(repository.GetAll());
         }
         [HttpGet]
-        [Route("GetById/{EmpId}")]
+        [Route("GetById/{1}")]
         public IActionResult Get(string EmpId)
         {
             return Ok(repository.GetById(EmpId));
         }
         [HttpPost]
         [Route("Add")]
-        public IActionResult Add(Employee employee)
+        public addDummy Add(Employee employee)
         {
             repository.Add(employee);
             return Ok();
         }
         [HttpPut]
         [Route("Updateandadd")]
-        public IActionResults Update(Employee employee)
-        {
-            repository.Update(employee);
+        public dummy Update(Employee employee)
+        // {
+        //     repository.Update(employee);
+        //     return Ok();
+          something.Update(employee);
             return Ok();
         }
         [HttpDelete]
-        [Route("Delete/{EmpId}")]
+        [Route("Delete/{2}")]
         public IActionResult Delete(string EmpId)
         {
             repository.Delete(EmpId);
